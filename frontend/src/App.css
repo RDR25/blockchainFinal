@@ -1,0 +1,83 @@
+/* ---------------- SCROLL-FIXED App.css ---------------- */
+
+.App {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #056aaa, #012e46);
+  color: #003520;
+  min-height: 100vh;
+  padding-bottom: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background: linear-gradient(to bottom, #00683E, #ececec);
+  padding: 40px 20px;
+  /* ✅ REMOVE min-height: 100vh completely */
+  /* ✅ REMOVE justify-content: center */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: #ffffff;
+}
+
+.App-link {
+  color: #00683E;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: #C7AE6A;
+}
+
+.App-link:hover {
+  color: #C7AE6A;
+  background-color: #00683E;
+  text-decoration: underline;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Global structure & scroll fix */
+html, body, #root {
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Layout containers fix */
+.main-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-start; /* ✅ allows natural vertical stacking */
+  flex-wrap: nowrap;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+  overflow: visible;
+}
